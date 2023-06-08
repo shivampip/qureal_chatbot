@@ -27,8 +27,3 @@ stories:
           - action: utter_did_that_help
           - intent: deny
           - action: utter_goodbye
-
-    - story: ask age
-      steps:
-          - intent: ask_age
-          - action: utter_cheer_up

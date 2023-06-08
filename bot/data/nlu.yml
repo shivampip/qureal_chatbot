@@ -17,13 +17,6 @@ nlu:
           - goodevening
           - good afternoon
 
-    - intent: ask_age
-      examples: |
-          - what is your age
-          - how old are you
-          - your age?
-          - how old you are
-
     - intent: goodbye
       examples: |
           - cu
