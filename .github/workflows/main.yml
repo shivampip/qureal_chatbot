@@ -1,0 +1,29 @@
+name: Deploy chatbot using Docker
+
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - main
+  
+  
+        
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect VPS, Pull, Restart docker-compose
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: 156.67.217.219
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd ${{ secrets.PATH }}
+            git checkout main
+            git stash
+            git pull origin main
+            sudo docker-compose down --remove-orphans
+            sudo docker-compose up -d
+            exit
