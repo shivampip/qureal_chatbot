@@ -23,3 +23,9 @@ rasa shell
 ```
 
 -   note: `/stop` to exit
+
+#### Train bot
+
+```
+rasa train
+```
